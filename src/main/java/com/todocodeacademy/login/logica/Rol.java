@@ -1,4 +1,5 @@
 package com.todocodeacademy.login.logica;
+
 import java.io.Serializable;
 import java.util.List;
 import javax.persistence.Entity;
@@ -9,13 +10,13 @@ import javax.persistence.OneToMany;
 
 @Entity
 public class Rol implements Serializable {
-    
+
     @Id
     //@GeneratedValue(strategy=GenerationType.AUTO)
     private int id;
-    private String nombreRol; 
+    private String nombreRol;
     private String descripcion;
-    @OneToMany (mappedBy="unRol")
+    @OneToMany(mappedBy = "unRol")
     private List<Usuario> listaUsuarios;
 
     public Rol() {
@@ -35,8 +36,6 @@ public class Rol implements Serializable {
     public void setListaUsuarios(List<Usuario> listaUsuarios) {
         this.listaUsuarios = listaUsuarios;
     }
-
-    
 
     public int getId() {
         return id;
@@ -61,7 +60,4 @@ public class Rol implements Serializable {
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
-    
-    
-    
 }

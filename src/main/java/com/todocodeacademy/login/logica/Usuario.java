@@ -8,18 +8,16 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
-
-
 @Entity
 public class Usuario implements Serializable {
-    
+
     @Id
     //@GeneratedValue(strategy=GenerationType.SEQUENCE)
     private int id;
     private String nombreUsuario;
     private String contrasenia;
-   @ManyToOne
-   @JoinColumn(name="fk_rol")
+    @ManyToOne
+    @JoinColumn(name = "fk_rol")
     private Rol unRol;
 
     public Usuario() {
@@ -39,7 +37,6 @@ public class Usuario implements Serializable {
         this.unRol = unRol;
     }
 
-    
     public int getId() {
         return id;
     }
@@ -63,7 +60,5 @@ public class Usuario implements Serializable {
     public void setContrasenia(String contrasenia) {
         this.contrasenia = contrasenia;
     }
-    
-    
-    
+
 }
